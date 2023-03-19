@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>epiphanies</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <button id="logoutBtn">Log Out</button>
+    <div class="player">
+        <input type="file" id="inputFile" onchange="createPlaylist(this.files)" multiple>
+        <label for="inputFile">add songs</label>
+    <div class="interface">
+        <audio class="audioSource">
+            <source src="" type="audio/mp3">
+        </audio>
+        current song: <span class="songTitle"></span><br>
+        <input type="range" class="durationControl" oninput="player.duration(event)" min="0" max="100" step="0.5" name="">
+        <div class="controls">   
+            <span class="ctrl" onclick="player.previous()">⏮</span>
+            <span class="ctrl" onclick="player.play()">▶</span>        
+            <span class="ctrl" onclick="player.pause()">⏸</span>
+            <span class="ctrl" onclick="player.next()">⏭</span><br>
+        </div>
+        <div>
+            <input type="range" class="volumeControl" oninput="player.volume(event)" min="0" max="2" step="0.1" name="">    
+        </div>
+           
+    </div>
+        <div class="allSongs">
+            
+        </div>
+    </div>
+    
+        <script src="player.js"></script>
+        <script>
+
+    // Tutorial followed: https://youtu.be/Er6gIU_BN4s
+    // Adding songs to the playlist through input
+
+    var allSongs = document.querySelector(".allSongs");
+    function createPlaylist(files){
+        
+        var path = URL.createObjectURL(files[0]);
+        player.song(path);
+        player.play;
+        
+        console.log(files[0]);
+
+        
+        var str = "";
+
+        for (var i = 0; i < files.length; i++){
+            if(files[i].type != "audio/mpeg"){
+                continue;
+            }
+            var path = URL.createObjectURL(files[i]);
+            str += "<div path='"+ path + "''>" + files [i].name + "</div>";
+        }
+        allSongs.innerHTML = str;
+
+        player.init();
+        player.play();
+    }
+    </script>         
+    </body>
+
+</html>

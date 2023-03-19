@@ -1,0 +1,61 @@
+.player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+#inputFile{
+    display: none;
+}
+label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+    margin-bottom: 10px;
+    background: linear-gradient(#c9bcda,#d6b5d4, #e7acc2);
+    border: 2px transparent;
+    border-radius: 30px;
+    box-shadow: 2px 2px 3px black;
+}
+
+.ctrl {
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #c9bcda;
+    border: none;
+}
+  
+.ctrl:hover {
+    background-color: #b2c9e9
+}
+.controls{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.allSongs:hover{
+    cursor: pointer;
+}
+
+input[type="range"]{
+    width: 98%;
+    appearance: none;
+    background-color: #b2c9e9;
+}
+
+.interface{
+    background-color: #c9bcda;
+}
+
+.songTitle{
+    font-size: 16px;
+    background: none;
+    color: black;
+}
